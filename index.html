@@ -1,214 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kiyah's Hair Studio</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
-
-body{
-background:#fafafa;
-color:#333;
-}
-
-header{
-background:#111;
-color:white;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-}
-
-nav a{
-color:white;
-margin-left:20px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.hero{
-height:60vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#f3d9ff,#e9c6ff);
-padding:20px;
-}
-
-.hero h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-.hero p{
-margin-bottom:20px;
-}
-
-.btn{
-background:#a855f7;
-color:white;
-padding:12px 25px;
-border-radius:25px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.section{
-padding:60px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.section h2{
-text-align:center;
-margin-bottom:40px;
-}
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-text-align:center;
-}
-
-.blog{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.blog-post{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 5px 10px rgba(0,0,0,0.1);
-}
-
-.contact{
-text-align:center;
-}
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
-}
-
-@media(max-width:600px){
-
-.hero h1{
-font-size:30px;
-}
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .booking-form { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        input, button { width: 100%; margin: 10px 0; padding: 10px; }
+    </style>
 </head>
-
 <body>
-
-<header>
-<h2>Kiyah's Hair Studio</h2>
-
-<nav>
-<a href="#">Home</a>
-<a href="#services">Services</a>
-<a href="#blog">Blog</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
-
-<section class="hero">
-<h1>Book Your Hair Appointment</h1>
-<p>Professional styles. Healthy hair. Beautiful results.</p>
-
-<a class="btn" href="#">Book Appointment</a>
-</section>
-
-<section class="section" id="services">
-
-<h2>Services</h2>
-
-<div class="services">
-
-<div class="card">
-<h3>Knotless Braids</h3>
-<p>Lightweight protective braids that look natural and last longer.</p>
-</div>
-
-<div class="card">
-<h3>Silk Press</h3>
-<p>Smooth and silky press for natural hair.</p>
-</div>
-
-<div class="card">
-<h3>Wig Install</h3>
-<p>Professional lace install and styling.</p>
-</div>
-
-<div class="card">
-<h3>Quick Weave</h3>
-<p>Fast and stylish protective weave installs.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="blog">
-
-<h2>Hair Tips & Updates</h2>
-
-<div class="blog">
-
-<div class="blog-post">
-<h3>How to Maintain Braids</h3>
-<p>Simple steps to keep your braids fresh and your scalp healthy.</p>
-</div>
-
-<div class="blog-post">
-<h3>Protective Styling</h3>
-<p>Why protective styles help grow and protect your natural hair.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section contact" id="contact">
-
-<h2>Contact</h2>
-
-<p>📍 Durham, NC</p>
-<p>📞 Your Phone Number</p>
-<p>📧 your@email.com</p>
-
-</section>
-
-<footer>
-<p>© 2026 Kiyah's Hair Studio</p>
-</footer>
-
+    <div class="booking-form">
+        <h2>Book an Appointment</h2>
+        <form id="appointmentForm">
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" name="time" required>
+            <button type="submit">Book Appointment</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            alert(`Appointment booked for ${date} at ${time}`);
+        });
+    </script>
 </body>
 </html>
